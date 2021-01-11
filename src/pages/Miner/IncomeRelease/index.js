@@ -21,7 +21,7 @@ class Page extends Component {
     },
     {
       title: '期数',
-      dataIndex: 'remark',
+      dataIndex: 'number',
       render: text => <div>{text}期</div>,
     },
     {
