@@ -10,7 +10,7 @@ const Option = Select.Option;
 class Page extends Component {
   state = {
     page: 1,
-    count: 10,
+    count: 12,
     search: null,
   };
 
