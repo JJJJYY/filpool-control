@@ -131,7 +131,9 @@ export async function authUserInvitationExport(params) {
 }
 
 export async function authUserInviteDetailExport(params) {
-  return params.all && params.agent ? request.post('Portal.AuthUser.ExportInviteDetail', params) : request.download('Portal.AuthUser.ExportInviteDetail', params);
+  return params.all && params.agent
+    ? request.post('Portal.AuthUser.ExportInviteDetail', params)
+    : request.download('Portal.AuthUser.ExportInviteDetail', params);
 }
 
 export async function authUserCheckInvitationDetailExport(params) {
@@ -211,8 +213,6 @@ export async function replenishmentRecordBatchAudit(params) {
 export async function replenishmentRecordExport(params) {
   return request.download('Portal.ReplenishmentRecord.Export', params);
 }
-
-
 
 // ----------------------- Deposit -----------------------
 export async function depositList(params) {
@@ -469,4 +469,35 @@ export async function incomeRecordList(params) {
 // ----------------------- DailyFilpoolMinerStatistics -----------------------
 export async function dailyFilpoolMinerStatisticsList(params) {
   return request.post('Portal.DailyFilpoolMinerStatistics.List', params);
+}
+
+// ----------------------- CbbProduct -----------------------
+export async function cbbProductList(params) {
+  return request.post('Portal.CbbProduct.List', params);
+}
+
+export async function cbbProductUpdate(params) {
+  return request.post('Portal.CbbProduct.Update', params);
+}
+
+export async function cbbProductAdd(params) {
+  return request.post('Portal.CbbProduct.Add', params);
+}
+
+// ----------------------- CbbUserOrders -----------------------
+export async function cbbUserOrdersList(params) {
+  return request.post('Portal.CbbUserOrders.List', params);
+}
+
+export async function cbbUserOrdersShow(params) {
+  return request.post('Portal.CbbUserOrders.Show', params);
+}
+
+// ----------------------- CbbTransferRecords -----------------------
+export async function cbbTransferRecordsList(params) {
+  return request.post('Portal.CbbTransferRecords.List', params);
+}
+
+export async function cbbTransferRecordsAudit(params) {
+  return request.post('Portal.CbbTransferRecords.Audit', params);
 }
