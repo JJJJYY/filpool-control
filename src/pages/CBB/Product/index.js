@@ -5,6 +5,7 @@ import { connect } from 'umi';
 import EditableTable from '@/components/EditableTable';
 import OperationGroup from '@/components/OperationGroup';
 import EditModal from '@/components/EditModal';
+import moment from 'moment';
 
 const Option = Select.Option;
 
@@ -96,17 +97,11 @@ class Page extends Component {
     {
       title: '开售时间',
       dataIndex: 'start_sale_time',
-      editable: true,
-      required: true,
-      custom() {
-        return (
-          <DatePicker
-            style={{ width: '100%' }}
-            showTime={{ format: 'HH:mm:ss' }}
-            format="YYYY-MM-DD HH:mm:ss"
-          />
-        );
-      },
+      // editable: true,
+      // required: true,
+      // custom() {
+      //   return <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" />
+      // },
     },
     {
       title: '状态',
@@ -217,6 +212,9 @@ class Page extends Component {
             style={{ width: '100%' }}
             showTime={{ format: 'HH:mm:ss' }}
             format="YYYY-MM-DD HH:mm:ss"
+            disabledDate={current => {
+              return current && current < moment(new Date()).add(-1, 'days');
+            }}
           />
         );
       },
