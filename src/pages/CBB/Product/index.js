@@ -75,7 +75,7 @@ class Page extends Component {
       },
     },
     {
-      title: '收益率（%）',
+      title: '年化',
       dataIndex: 'earning_rate',
       editable: true,
       required: true,
@@ -85,7 +85,7 @@ class Page extends Component {
       },
     },
     {
-      title: 'DFL奖励比例（%）',
+      title: 'DFL奖励比例',
       dataIndex: 'award_defi_rate',
       editable: true,
       required: true,
@@ -187,19 +187,19 @@ class Page extends Component {
       },
     },
     {
-      title: '收益率（%）',
+      title: '年化（如2%，则输入0.02；如10%，则输入0.1）',
       key: 'earning_rate',
       required: true,
       custom() {
-        return <InputNumber style={{ width: '100%' }} min={0} max={100} />;
+        return <InputNumber style={{ width: '100%' }} min={0} max={1} />;
       },
     },
     {
-      title: 'DFL奖励比例（%）',
+      title: 'DFL奖励比例（如2%，则输入0.02；如10%，则输入0.1）',
       key: 'award_defi_rate',
       required: true,
       custom() {
-        return <InputNumber style={{ width: '100%' }} min={0} max={100} />;
+        return <InputNumber style={{ width: '100%' }} min={0} max={1} />;
       },
     },
     {
