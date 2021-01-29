@@ -21,6 +21,8 @@ class Page extends Component {
     {
       title: '商品名称',
       dataIndex: 'tittle',
+      editable: true,
+      required: true,
     },
     {
       title: '币种',
@@ -187,7 +189,7 @@ class Page extends Component {
       },
     },
     {
-      title: '年化（如2%，则输入0.02；如10%，则输入0.1）',
+      title: '年化',
       key: 'earning_rate',
       required: true,
       custom() {
@@ -195,7 +197,7 @@ class Page extends Component {
       },
     },
     {
-      title: 'DFL奖励比例（如2%，则输入0.02；如10%，则输入0.1）',
+      title: 'DFL奖励比例',
       key: 'award_defi_rate',
       required: true,
       custom() {
@@ -240,8 +242,10 @@ class Page extends Component {
   };
 
   handleSubmit = values => {
-    if (values.start_time)
-      values.start_time = values.start_time.format('YYYY-MM-DD HH:mm:ss');
+    if (values.start_sale_time)
+      values.start_sale_time = values.start_sale_time.format(
+        'YYYY-MM-DD HH:mm:ss',
+      );
     this.props
       .dispatch({
         type: 'cbbProduct/add',
@@ -256,8 +260,8 @@ class Page extends Component {
   };
 
   handleSave = (row, id) => {
-    if (row.start_time)
-      row.start_time = row.start_time.format('YYYY-MM-DD HH:mm:ss');
+    if (row.start_sale_time)
+      row.start_sale_time = row.start_sale_time.format('YYYY-MM-DD HH:mm:ss');
     this.props
       .dispatch({
         type: 'cbbProduct/update',
