@@ -64,8 +64,16 @@ class Page extends Component {
       dataIndex: 'gas_fee_24',
     },
     {
+      title: '总收益',
+      dataIndex: 'total_award',
+    },
+    {
       title: '24H 收益',
       dataIndex: 'reward_24',
+    },
+    {
+      title: 'worker余额',
+      dataIndex: 'worker_balance',
     },
     {
       title: '日期',
