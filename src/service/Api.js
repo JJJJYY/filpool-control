@@ -501,3 +501,20 @@ export async function cbbTransferRecordsList(params) {
 export async function cbbTransferRecordsAudit(params) {
   return request.post('Portal.CbbTransferRecords.Audit', params);
 }
+
+// ----------------------- CbbProductConfig -----------------------
+export async function cbbProductConfigList(params) {
+  return request.post('Portal.CbbProductConfig.List', params);
+}
+
+export async function cbbProductConfigUpdate(params) {
+  return request.post('Portal.CbbProductConfig.Update', params);
+}
+
+export async function cbbProductConfigAdd(params) {
+  return request.post('Portal.CbbProductConfig.Add', params);
+}
+
+export async function cbbProductConfigDelete(params) {
+  return request.post('Portal.CbbProductConfig.Delete', params);
+}
