@@ -6,6 +6,7 @@ export default {
   state: {
     list: {},
     usdt: null,
+    fil: null,
   },
 
   effects: {
@@ -27,10 +28,14 @@ export default {
       yield put({ type: 'usdt', payload: { data: data } });
     },
 
+    *filBalance({ payload }, { call, put }) {
+      const data = yield call(api.withdrawalFILBalance, payload);
+      yield put({ type: 'fil', payload: { data: data } });
+    },
+
     *exportFILTxt({ payload }, { call }) {
       return yield call(api.withdrawalExportFILTxt, payload);
     },
-
   },
 
   reducers: {
@@ -38,15 +43,21 @@ export default {
       return {
         ...state,
         list: data,
-      }
+      };
     },
 
     usdt(state, { payload: { data } }) {
       return {
         ...state,
         usdt: data,
-      }
+      };
     },
 
+    fil(state, { payload: { data } }) {
+      return {
+        ...state,
+        fil: data,
+      };
+    },
   },
-}
+};
