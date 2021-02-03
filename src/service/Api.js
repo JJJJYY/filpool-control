@@ -240,6 +240,10 @@ export async function withdrawalUSDTBalance(params) {
   return request.post('Portal.Withdrawal.WithdrawalUSDTBalance', params);
 }
 
+export async function withdrawalFILBalance(params) {
+  return request.post('Portal.Withdrawal.WithdrawalFILBalance', params);
+}
+
 export async function withdrawalExportFILTxt(params) {
   return request.post('Portal.Withdrawal.ExportFILTxt', params);
 }
