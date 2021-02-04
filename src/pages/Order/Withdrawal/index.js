@@ -246,9 +246,17 @@ class Page extends Component {
               });
             }}
           />
-          {/* {search && (search.status == 4 || search.status == 5) && search.asset == 'FIL' && <Button className={styles.btn} type="primary" onClick={this.downloadFilWaitTrans}>
-            下载提币数据
-          </Button>} */}
+          {search &&
+            (search.status == 4 || search.status == 5) &&
+            search.asset == 'FIL' && (
+              <Button
+                className={styles.btn}
+                type="primary"
+                onClick={this.downloadFilWaitTrans}
+              >
+                下载提币数据
+              </Button>
+            )}
         </div>
         {usdt && <div className={styles.balance}>提币地址： {usdt} USDT</div>}
         {fil && (
