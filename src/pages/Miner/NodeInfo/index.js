@@ -103,6 +103,21 @@ class Page extends Component {
 
     return (
       <div>
+        <SearchGroup
+          onSearch={e => {
+            this.state.page = 1;
+            this.state.search = e;
+            this.loadData();
+          }}
+          items={[
+            { label: '节点号', name: 'miner' },
+            {
+              label: '日期',
+              name: 'time',
+              custom: <DatePicker.RangePicker />,
+            },
+          ]}
+        />
         <EditableTable
           columns={this.columns}
           dataSource={data ? data.list : []}
