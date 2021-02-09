@@ -103,9 +103,9 @@ class Page extends Component {
       render(text) {
         switch (text) {
           case 0:
-            return <Tag color="green">启用</Tag>;
-          case 1:
             return <Tag color="black">不启用</Tag>;
+          case 1:
+            return <Tag color="green">启用</Tag>;
         }
       },
       custom() {
