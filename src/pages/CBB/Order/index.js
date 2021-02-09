@@ -50,7 +50,7 @@ class Page extends Component {
     {
       title: '预计DFL奖励',
       dataIndex: 'expected_award_defi_rate',
-      render: text => <div>{parseFloat(text)}</div>,
+      render: text => <div>{text ? parseFloat(text) : 0}</div>,
     },
     {
       title: '状态',
